@@ -1,8 +1,9 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+from pages.PageObject import PageObject
 
-class LoginPage:
+
+class LoginPage(PageObject):
     # Locators
 
     url = 'https://www.saucedemo.com/'
@@ -17,12 +18,8 @@ class LoginPage:
     # Services
 
     def __init__(self):
-        self.driver = webdriver.Chrome()
-        self.driver.maximize_window()
+        super(LoginPage, self).__init__()
         self.driver.get(self.url)
-
-    def close(self):
-        self.driver.quit()
 
     def click_login_btn(self):
         self.driver.find_element(By.ID, self.login_button).click()

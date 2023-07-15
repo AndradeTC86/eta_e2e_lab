@@ -18,5 +18,3 @@ class TestLoginPage:
         assert product_page.is_url_products(), "Login não foi realizado!"
         assert product_page.has_products_title(), 'Título diferente do esperado!'
         assert product_page.get_product_list_size() > 0, 'Lista de produtos está vazia!'
-
-

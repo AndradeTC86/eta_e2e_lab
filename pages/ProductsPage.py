@@ -1,7 +1,9 @@
 from selenium.webdriver.common.by import By
 
+from pages.PageObject import PageObject
 
-class ProductsPage:
+
+class ProductsPage(PageObject):
     # Locators
 
     url = 'https://www.saucedemo.com/inventory.html'
@@ -12,7 +14,7 @@ class ProductsPage:
     # Services
 
     def __init__(self, driver):
-        self.driver = driver
+        super(ProductsPage, self).__init__(driver=driver)
 
     def is_url_products(self):
         return self.driver.current_url == self.url
