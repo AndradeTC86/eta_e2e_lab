@@ -1,8 +1,10 @@
+from pages.MenuPage import MenuPage
+
+
 class TestLogout:
 
-    def test_logout(self, setup):
-        login_page = setup
-        login_page.log_in_with_standard_user()
-        login_page.click_logout_link()
+    def test_logout(self, login_saucedemo):
+        menu = MenuPage(driver=login_saucedemo.driver)
+        menu.click_logout_link()
 
-        assert login_page.is_url_login(), "Página incorreta!"
+        assert login_saucedemo.is_url_login(), "Página incorreta!"
