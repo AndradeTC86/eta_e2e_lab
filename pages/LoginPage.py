@@ -17,8 +17,8 @@ class LoginPage(PageObject):
 
     # Services
 
-    def __init__(self):
-        super(LoginPage, self).__init__()
+    def __init__(self, browser):
+        super(LoginPage, self).__init__(browser=browser)
         self.driver.get(self.url)
 
     def click_login_btn(self):
