@@ -96,6 +96,17 @@ class ProductsPage(PageObject):
                 return False
         return True
 
+    def validate_default_products_sorted_a_to_z(self):
+        all_title_items = self.driver.find_elements(By.CLASS_NAME, self.class_inventory_item_name)
+        for i in range(len(all_title_items)-1):
+            current_name = all_title_items[i].text
+            print(f'Current name:{current_name}')
+            next_name = all_title_items[i+1].text
+            print(f'Next name:{next_name}')
+            if current_name > next_name:
+                return False
+        return True
+
 
 
 

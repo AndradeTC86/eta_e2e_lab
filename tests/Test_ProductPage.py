@@ -18,6 +18,7 @@ class TestProductPage:
         product_page = ProductsPage(driver=login_saucedemo.driver)
         assert product_page.check_products_page(), "Página de produtos não foi encontrada!"
         assert product_page.get_product_list_size() > 0, 'Lista de produtos está vazia!'
+        assert product_page.validate_default_products_sorted_a_to_z(), "Ordenação padrão incorreta"
         product_page.sort_products_from_low_to_high()
         assert product_page.validate_sorted_products_low_to_high(), "Ordem dos produtos está incorreta"
 
@@ -26,6 +27,7 @@ class TestProductPage:
         product_page = ProductsPage(driver=login_saucedemo.driver)
         assert product_page.check_products_page(), "Página de produtos não foi encontrada!"
         assert product_page.get_product_list_size() > 0, 'Lista de produtos está vazia!'
+        assert product_page.validate_default_products_sorted_a_to_z(), "Ordenação padrão incorreta"
         product_page.sort_products_from_high_to_low()
         assert product_page.validate_sorted_products_high_to_low(), "Ordem dos produtos está incorreta"
 
@@ -34,6 +36,7 @@ class TestProductPage:
         product_page = ProductsPage(driver=login_saucedemo.driver)
         assert product_page.check_products_page(), "Página de produtos não foi encontrada!"
         assert product_page.get_product_list_size() > 0, 'Lista de produtos está vazia!'
+        assert product_page.validate_default_products_sorted_a_to_z(), "Ordenação padrão incorreta"
         product_page.sort_products_from_z_to_a()
         assert product_page.validate_sorted_products_z_to_a(), "Ordem dos produtos está incorreta"
 
