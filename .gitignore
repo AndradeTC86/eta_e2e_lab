@@ -1,25 +1,47 @@
-
-*.iml
-
-## Directory-based project format:
+# Configurações específicas do PyCharm (baseado em IntelliJ IDEA)
 .idea/
 
-### Python template
-# Byte-compiled / optimized / DLL files
+# Configurações e dependências do ambiente Python
+*.pyc
 __pycache__/
-__pycache__
-*.py[cod]
-*$py.class
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-
-.pytest_cache
+# Configurações do sistema operacional
 .DS_Store
+Thumbs.db
+
+# Arquivos de log e cache
+*.log
+*.sqlite3
+
+# Gradle (se usado em projetos mistos com Java/Kotlin)
+.gradle/
+
+# Configurações de teste e relatórios
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+htmlcov/
+*.pytest_cache/
+.cache/
+
+# Dependências de pacotes Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtualenv em ambientes de contêiner (Docker, etc.)
+pyvenv.cfg
+
+# Outros arquivos temporários
+*.swp
+*.swo
+*.bak
